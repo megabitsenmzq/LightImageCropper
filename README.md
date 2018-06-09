@@ -23,11 +23,11 @@ Then Add these to the class:
 let imagePicker = LImagePicker()
 
 func imagePicker(imagePicker: LImagePicker, pickedImage: UIImage) {
-	//do thing with image.
+    //do thing with image.
 }
     
 func imagePickerDidCancel(imagePicker: LImagePicker) {
-	print("Canceled")
+    print("Canceled")
 }
 ```
 
