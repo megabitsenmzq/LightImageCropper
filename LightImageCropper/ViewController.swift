@@ -2,24 +2,31 @@
 //  ViewController.swift
 //  LightImageCropper
 //
-//  Created by 孟金羽 on 2018/6/9.
-//  Copyright © 2018年 Megabits. All rights reserved.
+//  Created by Jinyu Meng on 2018/6/9.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, LImagePickerDelegate {
 
+    var imagePicker = LImagePicker()
+    
+    @IBOutlet var imageView: UIImageView!
+    @IBAction func selectAndCrop(_ sender: Any) {
+        present(imagePicker.imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePicker(imagePicker: LImagePicker, pickedImage: UIImage) {
+        imageView.image = pickedImage
+    }
+    
+    func imagePickerDidCancel(imagePicker: LImagePicker) {
+        print("Canceled")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        imagePicker.delegate = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

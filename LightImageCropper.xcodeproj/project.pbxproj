@@ -12,6 +12,12 @@
 		C075F8E520CBBB960090C90E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C075F8E320CBBB960090C90E /* Main.storyboard */; };
 		C075F8E720CBBB970090C90E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C075F8E620CBBB970090C90E /* Assets.xcassets */; };
 		C075F8EA20CBBB970090C90E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C075F8E820CBBB970090C90E /* LaunchScreen.storyboard */; };
+		C075F8F820CBBBB60090C90E /* LImageCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075F8F220CBBBB60090C90E /* LImageCropView.swift */; };
+		C075F8F920CBBBB60090C90E /* LCropBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075F8F320CBBBB60090C90E /* LCropBorderView.swift */; };
+		C075F8FA20CBBBB60090C90E /* LImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075F8F420CBBBB60090C90E /* LImagePicker.swift */; };
+		C075F8FB20CBBBB60090C90E /* LImageCropOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075F8F520CBBBB60090C90E /* LImageCropOverlayView.swift */; };
+		C075F8FC20CBBBB60090C90E /* LImageCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075F8F620CBBBB60090C90E /* LImageCropViewController.swift */; };
+		C075F8FD20CBBBB60090C90E /* LResizableCropOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075F8F720CBBBB60090C90E /* LResizableCropOverlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		C075F8E620CBBB970090C90E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C075F8E920CBBB970090C90E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C075F8EB20CBBB970090C90E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C075F8F220CBBBB60090C90E /* LImageCropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LImageCropView.swift; sourceTree = "<group>"; };
+		C075F8F320CBBBB60090C90E /* LCropBorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCropBorderView.swift; sourceTree = "<group>"; };
+		C075F8F420CBBBB60090C90E /* LImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LImagePicker.swift; sourceTree = "<group>"; };
+		C075F8F520CBBBB60090C90E /* LImageCropOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LImageCropOverlayView.swift; sourceTree = "<group>"; };
+		C075F8F620CBBBB60090C90E /* LImageCropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LImageCropViewController.swift; sourceTree = "<group>"; };
+		C075F8F720CBBBB60090C90E /* LResizableCropOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LResizableCropOverlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +66,28 @@
 		C075F8DE20CBBB960090C90E /* LightImageCropper */ = {
 			isa = PBXGroup;
 			children = (
-				C075F8DF20CBBB960090C90E /* AppDelegate.swift */,
-				C075F8E120CBBB960090C90E /* ViewController.swift */,
 				C075F8E320CBBB960090C90E /* Main.storyboard */,
+				C075F8E120CBBB960090C90E /* ViewController.swift */,
+				C075F8F120CBBBB60090C90E /* LightImageCropperClasses */,
+				C075F8DF20CBBB960090C90E /* AppDelegate.swift */,
 				C075F8E620CBBB970090C90E /* Assets.xcassets */,
 				C075F8E820CBBB970090C90E /* LaunchScreen.storyboard */,
 				C075F8EB20CBBB970090C90E /* Info.plist */,
 			);
 			path = LightImageCropper;
+			sourceTree = "<group>";
+		};
+		C075F8F120CBBBB60090C90E /* LightImageCropperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				C075F8F220CBBBB60090C90E /* LImageCropView.swift */,
+				C075F8F320CBBBB60090C90E /* LCropBorderView.swift */,
+				C075F8F420CBBBB60090C90E /* LImagePicker.swift */,
+				C075F8F520CBBBB60090C90E /* LImageCropOverlayView.swift */,
+				C075F8F620CBBBB60090C90E /* LImageCropViewController.swift */,
+				C075F8F720CBBBB60090C90E /* LResizableCropOverlayView.swift */,
+			);
+			path = LightImageCropperClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +161,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C075F8FD20CBBBB60090C90E /* LResizableCropOverlayView.swift in Sources */,
+				C075F8F820CBBBB60090C90E /* LImageCropView.swift in Sources */,
+				C075F8FC20CBBBB60090C90E /* LImageCropViewController.swift in Sources */,
+				C075F8F920CBBBB60090C90E /* LCropBorderView.swift in Sources */,
 				C075F8E220CBBB960090C90E /* ViewController.swift in Sources */,
+				C075F8FA20CBBBB60090C90E /* LImagePicker.swift in Sources */,
+				C075F8FB20CBBBB60090C90E /* LImageCropOverlayView.swift in Sources */,
 				C075F8E020CBBB960090C90E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +315,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJN4A73F8D;
 				INFOPLIST_FILE = LightImageCropper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,6 +334,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJN4A73F8D;
 				INFOPLIST_FILE = LightImageCropper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
