@@ -17,7 +17,7 @@ Edit from [WDImagePicker](https://github.com/justwudi/WDImagePicker)
 
 First add "LImagePickerDelegate" to the class.
 
-Add these to the class:
+Then Add these to the class:
 
 ```swift
 let imagePicker = LImagePicker()
