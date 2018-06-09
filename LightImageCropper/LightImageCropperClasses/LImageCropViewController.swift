@@ -41,6 +41,11 @@ class LImageCropViewController: UIViewController {
             self.navigationController?.isNavigationBarHidden = false
         }
     }
+    
+    //Prevent control center activating by accident in iOS 11
+    override func preferredScreenEdgesDeferringSystemGestures() -> UIRectEdge {
+        return .top
+    }
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()

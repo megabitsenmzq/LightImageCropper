@@ -80,11 +80,11 @@
 		C075F8F120CBBBB60090C90E /* LightImageCropperClasses */ = {
 			isa = PBXGroup;
 			children = (
+				C075F8F620CBBBB60090C90E /* LImageCropViewController.swift */,
+				C075F8F420CBBBB60090C90E /* LImagePicker.swift */,
 				C075F8F220CBBBB60090C90E /* LImageCropView.swift */,
 				C075F8F320CBBBB60090C90E /* LCropBorderView.swift */,
-				C075F8F420CBBBB60090C90E /* LImagePicker.swift */,
 				C075F8F520CBBBB60090C90E /* LImageCropOverlayView.swift */,
-				C075F8F620CBBBB60090C90E /* LImageCropViewController.swift */,
 				C075F8F720CBBBB60090C90E /* LResizableCropOverlayView.swift */,
 			);
 			path = LightImageCropperClasses;
