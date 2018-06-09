@@ -23,7 +23,6 @@ internal class LResizableCropOverlayView: LImageCropOverlayView {
 
     private var initialContentSize = CGSize(width: 0, height: 0)
     private var maxRect: CGRect!
-    private var resizingEnabled: Bool!
     private var anchor: CGPoint!
     private var startPoint: CGPoint!
     private var resizeMultiplyer = LResizableViewBorderMultiplyer()
@@ -33,10 +32,9 @@ internal class LResizableCropOverlayView: LImageCropOverlayView {
             return super.frame
         }
         set {
-            
             super.frame = newValue
-
-            let toolbarSize = CGFloat(UIDevice.current.userInterfaceIdiom == .pad ? 0 : 54)
+            
+            let toolbarSize: CGFloat = 54
             let width = self.bounds.size.width
             let height = self.bounds.size.height
 
@@ -71,16 +69,13 @@ internal class LResizableCropOverlayView: LImageCropOverlayView {
 
             anchor = self.calculateAnchorBorder(anchorPoint: touchPoint)
             fillMultiplyer()
-            resizingEnabled = true
             startPoint = touch.location(in: self.superview)
         }
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
-            if resizingEnabled! {
-                self.resizeWithTouchPoint(point: touch.location(in: self.superview))
-            }
+            self.resizeWithTouchPoint(point: touch.location(in: self.superview))
         }
     }
 
@@ -95,7 +90,7 @@ internal class LResizableCropOverlayView: LImageCropOverlayView {
     }
 
     private func addContentViews() {
-        let toolbarSize = CGFloat(UIDevice.current.userInterfaceIdiom == .pad ? 0 : 54)
+        let toolbarSize: CGFloat = 54
         let width = self.bounds.size.width
         let height = self.bounds.size.height
 

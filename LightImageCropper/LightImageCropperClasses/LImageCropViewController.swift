@@ -30,21 +30,24 @@ class LImageCropViewController: UIViewController {
         
         super.viewDidLoad()
 
+        self.navigationController?.isNavigationBarHidden = true
         self.automaticallyAdjustsScrollViewInsets = false
         self.setupNavigationBar()
         self.setupCropView()
         self.setupToolbar()
-
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            self.navigationController?.isNavigationBarHidden = true
-        } else {
-            self.navigationController?.isNavigationBarHidden = false
-        }
     }
     
     //Prevent notification center activating by accident in iOS 11
     override func preferredScreenEdgesDeferringSystemGestures() -> UIRectEdge {
         return .top
+    }
+    
+    override func prefersHomeIndicatorAutoHidden() -> Bool {
+        return true
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 
     override func viewWillLayoutSubviews() {
@@ -126,32 +129,28 @@ class LImageCropViewController: UIViewController {
     }
 
     private func setupToolbar() {
-        
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            self.toolbar = UIToolbar(frame: CGRect.zero)
-            self.toolbar.isTranslucent = true
-            self.toolbar.barStyle = .black
-            self.view.addSubview(self.toolbar)
+        self.toolbar = UIToolbar(frame: CGRect.zero)
+        self.toolbar.isTranslucent = true
+        self.toolbar.barStyle = .black
+        self.view.addSubview(self.toolbar)
 
-            self.setupCancelButton()
-            self.setupUseButton()
+        self.setupCancelButton()
+        self.setupUseButton()
 
-            let info = UILabel(frame: CGRect.zero)
-            info.text = ""
-            info.textColor = UIColor(red: 0.173, green: 0.173, blue: 0.173, alpha: 1)
-            info.backgroundColor = UIColor.clear
-            info.shadowColor = UIColor(red: 0.827, green: 0.731, blue: 0.839, alpha: 1)
-            info.shadowOffset = CGSize(width:0, height:1)
-            info.font = UIFont.boldSystemFont(ofSize: 18)
-            info.sizeToFit()
+        let info = UILabel(frame: CGRect.zero)
+        info.text = ""
+        info.textColor = UIColor(red: 0.173, green: 0.173, blue: 0.173, alpha: 1)
+        info.backgroundColor = UIColor.clear
+        info.shadowColor = UIColor(red: 0.827, green: 0.731, blue: 0.839, alpha: 1)
+        info.shadowOffset = CGSize(width:0, height:1)
+        info.font = UIFont.boldSystemFont(ofSize: 18)
+        info.sizeToFit()
 
-            let cancel = UIBarButtonItem(customView: self.cancelButton)
-            let flex = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-            let label = UIBarButtonItem(customView: info)
-            let use = UIBarButtonItem(customView: self.useButton)
+        let cancel = UIBarButtonItem(customView: self.cancelButton)
+        let flex = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let label = UIBarButtonItem(customView: info)
+        let use = UIBarButtonItem(customView: self.useButton)
 
-            self.toolbar.setItems([cancel, flex, label, flex, use], animated: false)
-            
-        }
+        self.toolbar.setItems([cancel, flex, label, flex, use], animated: false)
     }
 }

@@ -29,7 +29,7 @@ internal class LImageCropOverlayView: UIView {
 
     override func draw(_ rect: CGRect) {
 
-        let toolbarSize = CGFloat(UIDevice.current.userInterfaceIdiom == .pad ? 0 : 54)
+        let toolbarSize: CGFloat = 54
 
         let width = self.frame.width
         let height = self.frame.height - toolbarSize

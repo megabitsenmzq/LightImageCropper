@@ -108,7 +108,7 @@ internal class LImageCropView: UIView, UIScrollViewDelegate {
         super.layoutSubviews()
 
         let size = self.cropSize;
-        let toolbarSize = CGFloat(UIDevice.current.userInterfaceIdiom == .pad ? 0 : 54)
+        let toolbarSize: CGFloat = 54
         self.xOffset = floor((self.bounds.width - size.width) * 0.5)
         self.yOffset = floor((self.bounds.height - toolbarSize - size.height) * 0.5)
 
