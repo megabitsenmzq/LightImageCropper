@@ -5,6 +5,7 @@ A light weight image cropper written in swift.
 - Very light weight.
 - Use with built in UIImagePicker.
 - Crop area is limited to image size.
+- Prevent notification center activating by accident in iOS 11.
 
 Edit from [WDImagePicker](https://github.com/justwudi/WDImagePicker) 
 

@@ -42,7 +42,7 @@ class LImageCropViewController: UIViewController {
         }
     }
     
-    //Prevent control center activating by accident in iOS 11
+    //Prevent notification center activating by accident in iOS 11
     override func preferredScreenEdgesDeferringSystemGestures() -> UIRectEdge {
         return .top
     }
