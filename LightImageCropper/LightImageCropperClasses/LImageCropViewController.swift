@@ -17,7 +17,6 @@ class LImageCropViewController: UIViewController {
     
     var sourceImage: UIImage!
     var delegate: LImageCropControllerDelegate?
-    var cropSize: CGSize!
 
     private var croppedImage: UIImage!
 
@@ -27,12 +26,10 @@ class LImageCropViewController: UIViewController {
     private var cancelButton: UIButton!
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
 
         self.navigationController?.isNavigationBarHidden = true
         self.automaticallyAdjustsScrollViewInsets = false
-        self.setupNavigationBar()
         self.setupCropView()
         self.setupToolbar()
     }
@@ -62,25 +59,14 @@ class LImageCropViewController: UIViewController {
     }
 
     @objc func actionUse(sender: AnyObject) {
-        
         croppedImage = self.imageCropView.croppedImage()
         self.delegate?.imageCropController(imageCropController: self, didFinishWithCroppedImage: croppedImage)
-        
-    }
-
-    private func setupNavigationBar() {
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel,
-                                                                target: self, action: #selector(actionCancel))
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Use", style: .plain,
-            target: self, action: #selector(actionUse))
     }
 
     private func setupCropView() {
         
         self.imageCropView = LImageCropView(frame: self.view.bounds)
         self.imageCropView.imageToCrop = sourceImage
-        self.imageCropView.cropSize = cropSize
         self.view.addSubview(self.imageCropView)
     }
 
@@ -113,19 +99,15 @@ class LImageCropViewController: UIViewController {
         let components: [CGFloat] = [1, 1, 1, 1, 123.0 / 255.0, 125.0 / 255.0, 132.0 / 255.0, 1]
 
         UIGraphicsBeginImageContextWithOptions(CGSize(width:320, height:54), true, 0)
-
         let context = UIGraphicsGetCurrentContext()
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let gradient = CGGradient(colorSpace: colorSpace, colorComponents: components, locations: nil, count: 2)
-
         context!.drawLinearGradient(gradient!, start: CGPoint(x:0, y:0), end: CGPoint(x:0, y:54), options: [])
 
         let viewImage = UIGraphicsGetImageFromCurrentImageContext()
-
         UIGraphicsEndImageContext()
 
         return viewImage!
-        
     }
 
     private func setupToolbar() {

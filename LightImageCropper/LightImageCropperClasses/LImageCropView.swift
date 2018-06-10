@@ -52,12 +52,25 @@ internal class LImageCropView: UIView, UIScrollViewDelegate {
             height:rect.size.height * scale)
     }
 
-    var imageToCrop: UIImage? {
+    var imageToCrop: UIImage! {
         get {
             return self.imageView.image
         }
         set {
             self.imageView.image = newValue
+            
+            let safeArea = CGSize(width: UIScreen.main.bounds.width * 0.85, height: UIScreen.main.bounds.height * 0.83)
+            let imageSize = newValue.size
+            let widthScale = safeArea.width / imageSize.width
+            let heightScale = safeArea.height / imageSize.height
+            var scale: CGFloat = 1.0
+            if widthScale > 0 {
+                scale = (heightScale > 0) ? min(widthScale, heightScale) : heightScale
+            } else {
+                scale = (heightScale > 0) ? widthScale : max(widthScale, heightScale)
+            }
+            
+            cropSize = CGSize(width: imageSize.width * scale, height: imageSize.height * scale)
         }
     }
 

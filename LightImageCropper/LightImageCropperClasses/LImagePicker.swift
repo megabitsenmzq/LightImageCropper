@@ -16,7 +16,6 @@ public protocol LImagePickerDelegate {
 public class LImagePicker: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate, LImageCropControllerDelegate {
     
     public var delegate: LImagePickerDelegate?
-    public var cropSize: CGSize!
 
     private var _imagePickerController: UIImagePickerController!
 
@@ -27,7 +26,6 @@ public class LImagePicker: NSObject, UIImagePickerControllerDelegate, UINavigati
     override public init() {
         super.init()
 
-        self.cropSize = CGSize(width:320, height:320)
         _imagePickerController = UIImagePickerController()
         _imagePickerController.delegate = self
         _imagePickerController.sourceType = .photoLibrary
@@ -52,27 +50,7 @@ public class LImagePicker: NSObject, UIImagePickerControllerDelegate, UINavigati
         
         let cropController = LImageCropViewController()
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        let imageSize = image.size
-        let safeArea = CGSize(width: UIScreen.main.bounds.width * 0.85, height: UIScreen.main.bounds.height * 0.83)
-        let widthScale = safeArea.width / imageSize.width
-        let heightScale = safeArea.height / imageSize.height
-        var scale: CGFloat = 1.0
-        if widthScale > 0 {
-            if heightScale > 0 {
-                scale = min(widthScale, heightScale)
-            } else {
-                scale = heightScale
-            }
-        } else {
-            if heightScale > 0 {
-                scale = widthScale
-            } else {
-                scale = max(widthScale, heightScale)
-            }
-        }
-        cropSize = CGSize(width: imageSize.width * scale, height: imageSize.height * scale)
         cropController.sourceImage = image
-        cropController.cropSize = self.cropSize
         cropController.delegate = self
         picker.pushViewController(cropController, animated: true)
     }
@@ -81,5 +59,4 @@ public class LImagePicker: NSObject, UIImagePickerControllerDelegate, UINavigati
         self.delegate?.imagePicker(imagePicker: self, pickedImage: croppedImage)
         imagePickerController.dismiss(animated: true, completion: nil)
     }
-    
 }

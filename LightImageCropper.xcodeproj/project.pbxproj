@@ -18,6 +18,7 @@
 		C075F8FB20CBBBB60090C90E /* LImageCropOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075F8F520CBBBB60090C90E /* LImageCropOverlayView.swift */; };
 		C075F8FC20CBBBB60090C90E /* LImageCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075F8F620CBBBB60090C90E /* LImageCropViewController.swift */; };
 		C075F8FD20CBBBB60090C90E /* LResizableCropOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075F8F720CBBBB60090C90E /* LResizableCropOverlayView.swift */; };
+		C075F90F20CD49C50090C90E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C075F90E20CD49C50090C90E /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		C075F8F520CBBBB60090C90E /* LImageCropOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LImageCropOverlayView.swift; sourceTree = "<group>"; };
 		C075F8F620CBBBB60090C90E /* LImageCropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LImageCropViewController.swift; sourceTree = "<group>"; };
 		C075F8F720CBBBB60090C90E /* LResizableCropOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LResizableCropOverlayView.swift; sourceTree = "<group>"; };
+		C075F90E20CD49C50090C90E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				C075F8DF20CBBB960090C90E /* AppDelegate.swift */,
 				C075F8E620CBBB970090C90E /* Assets.xcassets */,
 				C075F8E820CBBB970090C90E /* LaunchScreen.storyboard */,
+				C075F90E20CD49C50090C90E /* README.md */,
 				C075F8EB20CBBB970090C90E /* Info.plist */,
 			);
 			path = LightImageCropper;
@@ -150,6 +153,7 @@
 			files = (
 				C075F8EA20CBBB970090C90E /* LaunchScreen.storyboard in Resources */,
 				C075F8E720CBBB970090C90E /* Assets.xcassets in Resources */,
+				C075F90F20CD49C50090C90E /* README.md in Resources */,
 				C075F8E520CBBB960090C90E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
